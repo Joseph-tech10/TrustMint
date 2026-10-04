@@ -1,0 +1,19 @@
+[package]
+name = "invoice-token"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+soroban-sdk = { workspace = true }
+
+[dev-dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }
+kyc-registry = { path = "../kyc-registry", features = ["testutils"] }
+compliance-engine = { path = "../compliance-engine", features = ["testutils"] }
+
+[features]
+testutils = ["soroban-sdk/testutils"]
